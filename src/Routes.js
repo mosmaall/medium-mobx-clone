@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Loadable from 'react-loadable'
 import { inject, observer } from 'mobx-react'
 
+import NavBar from './components/NavBar'
+
 const LOADABLE_CONFIG = { loading: () => null, delay: 2000 }
 
 //Dynamic loading
@@ -19,6 +21,7 @@ const Routes = () => {
     <div>
       <Router basename={process.env.REACT_APP_BASE_URL}>
         <div>
+          <NavBar />
           <Route exact path="/" component={Home.home} />
         </div>
       </Router>
