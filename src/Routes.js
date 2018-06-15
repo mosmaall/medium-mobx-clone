@@ -16,6 +16,14 @@ const Home = {
   }),
 }
 
+const Register = {
+  register: Loadable({
+    ...LOADABLE_CONFIG,
+    loader: () =>
+      import(/* webpackChunkName: "route.RegisterPage.RegisterPage" */ './pages/RegisterPage'),
+  }),
+}
+
 const Routes = () => {
   return (
     <div>
@@ -23,6 +31,7 @@ const Routes = () => {
         <div>
           <NavBar />
           <Route exact path="/" component={Home.home} />
+          <Route path="/register" component={Register.register} />
         </div>
       </Router>
     </div>
